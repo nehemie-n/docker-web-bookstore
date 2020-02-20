@@ -1,32 +1,57 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Books</router-link>
+      <router-link to="/add">Add Book</router-link>
     </div>
-    <router-view/>
+    <div id="app-c">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+  margin: 0;
+  background: fade(deepskyblue, 5%);
+  font-family: "Poppins", sans-serif;
 }
-
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 #nav {
-  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  background: fade(deepskyblue, 10%);
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.033);
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    transition: 500ms ease;
 
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    color: black;
+    font-weight: 400;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
     &.router-link-exact-active {
-      color: #42b983;
+      border-bottom: 2px solid deepskyblue;
+      color: deepskyblue;
     }
   }
+}
+#app {
+  margin: 0 auto;
+  background: white;
+  max-width: 500px;
+  min-height: 100vh;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.233);
+}
+#app-c {
+  padding: 10px;
 }
 </style>
